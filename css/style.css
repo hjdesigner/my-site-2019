@@ -4,6 +4,8 @@
   --color-lightGray: #b3b3b3;
   --color-lightBlue: #58A9f3;
   --color-yellow: #FBC54C;
+  --color-green: #7BE473;
+  --color-footer: #171616;
   --small-spacing: 8px;
   --regular-spacing: 16px;
   --medium-spacing: 24px;
@@ -35,7 +37,8 @@ strong {
   color: var(--color-lightBlue, #3487f5);
 }
 .introduction,
-.lab {
+.lab,
+.articles {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -44,7 +47,8 @@ strong {
   width: 100%;
 }
 .introduction-content,
-.lab-content {
+.lab-content,
+.articles-content {
   max-width: 1000px;
   width: 100%;
 }
@@ -62,7 +66,8 @@ strong {
   text-align: center;
 }
 .introduction-sub-title,
-.lab-title {
+.lab-title,
+.articles-title {
   color: var(--color-white, #FFFFFF);
   font-size: 2.6em;
   font-weight: 300;
@@ -70,7 +75,8 @@ strong {
   text-align: center;
 }
 .introduction-sub-title::after,
-.lab-title::after {
+.lab-title::after,
+.articles-title::after {
   animation: typedEffect .7s infinite;
   content: '|';
   display: inline-block;
@@ -89,7 +95,8 @@ strong {
   font-weight: 400;
   text-align: left;
 }
-.lab-list {
+.lab-list,
+.articles-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -98,7 +105,8 @@ strong {
   margin-bottom: var(--medium-spacing, 24px);
   width: 100%;
 }
-.lab-item a {
+.lab-item a,
+.articles-item a{
   text-decoration: none;
 }
 .lab-image {
@@ -119,6 +127,45 @@ strong {
   color: var(--color-white, #FFFFFF);
   font-size: 1.8em;
   margin-top: var(--small-spacing, 8px);
+}
+.articles-title {
+  color: var(--color-green, #7BE473);
+  font-weight: 400;
+  text-align: left;
+}
+.articles-item {
+  padding: var(--regular-spacing, 16px) 0;
+  border-bottom: 2px solid var(--color-lightGray, ##58A9f3);
+}
+.article-title {
+  color: var(--color-lightGray, #b3b3b3);
+  font-size: 2em;
+  font-weight: 400;
+  line-height: 1.5; 
+}
+footer {
+  align-items: center;
+  background-color: var(--color-footer, #171616);
+  display: flex;
+  bottom: 0;
+  justify-content: center;
+  left: 0;
+  padding: var(--small-spacing, 8px) 0;
+  position: fixed;
+  width: 100%;
+}
+.footer-nav {
+  display: flex;
+}
+.footer-nav-item {
+  margin: 0 var(--small-spacing, 8px);
+  width: 22px;
+}
+.footer-nav-item svg {
+  width: 100%;
+}
+.footer-nav-item svg path {
+  fill: var(--color-lightGray);
 }
 
 @media screen and (min-width: 768px) {
@@ -156,6 +203,12 @@ strong {
   }
   .lab-item:hover {
     opacity: .8;
+  }
+  .articles-item a .article-title {
+    transition: color .25s ease-in-out;
+  }
+  .articles-item a:hover .article-title {
+    color: var(--color-lightBlue, #58A9f3)
   }
 
 }
