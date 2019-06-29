@@ -3,6 +3,7 @@
   --color-black: #000000;
   --color-lightGray: #b3b3b3;
   --color-lightBlue: #58A9f3;
+  --color-yellow: #FBC54C;
   --small-spacing: 8px;
   --regular-spacing: 16px;
   --medium-spacing: 24px;
@@ -33,7 +34,8 @@ body {
 strong {
   color: var(--color-lightBlue, #3487f5);
 }
-.introduction {
+.introduction,
+.lab {
   align-items: center;
   display: flex;
   justify-content: center;
@@ -41,7 +43,8 @@ strong {
   padding: var(--extraLarge-spacing, 64px) var(--regular-spacing, 16px);
   width: 100%;
 }
-.introduction-content {
+.introduction-content,
+.lab-content {
   max-width: 1000px;
   width: 100%;
 }
@@ -58,14 +61,16 @@ strong {
   margin: var(--medium-spacing, 24px) 0 0;
   text-align: center;
 }
-.introduction-sub-title {
+.introduction-sub-title,
+.lab-title {
   color: var(--color-white, #FFFFFF);
   font-size: 2.6em;
   font-weight: 300;
   margin: var(--small-spacing, 8px) 0 var(--large-spacing, 32px);
   text-align: center;
 }
-.introduction-sub-title::after {
+.introduction-sub-title::after,
+.lab-title::after {
   animation: typedEffect .7s infinite;
   content: '|';
   display: inline-block;
@@ -79,7 +84,53 @@ strong {
   margin: var(--small-spacing, 8px) 0 0;
   text-align: center;
 }
+.lab-title {
+  color: var(--color-yellow, #FBC54C);
+  font-weight: 400;
+  text-align: left;
+}
+.lab-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.lab-item {
+  margin-bottom: var(--medium-spacing, 24px);
+  width: 100%;
+}
+.lab-item a {
+  text-decoration: none;
+}
+.lab-image {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 47%;
+  width: 100%;
+}
+.lab-item img {
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  width: 100%;
+}
+.lab-item-title {
+  color: var(--color-white, #FFFFFF);
+  font-size: 1.8em;
+  margin-top: var(--small-spacing, 8px);
+}
 
+@media screen and (min-width: 768px) {
+  .lab-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .lab-item {
+    width: 48%;
+  }
+}
 
 @media screen and (min-width: 1024px) {
 
@@ -89,11 +140,22 @@ strong {
   .introduction-title {
     font-size: 6em;
   }
-  .introduction-sub-title {
+  .introduction-sub-title,
+  .lab-title {
     font-size: 3em;
   }
   .introduction-text {
     font-size: 2.4em;
+  }
+
+  .lab-item {
+    width: 31%;
+  }
+  .lab-item {
+    transition: opacity .25s ease-in-out;
+  }
+  .lab-item:hover {
+    opacity: .8;
   }
 
 }
