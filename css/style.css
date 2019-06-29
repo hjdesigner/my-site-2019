@@ -19,6 +19,17 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
 }
+@keyframes typedEffect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 strong {
   color: var(--color-lightBlue, #3487f5);
 }
@@ -53,6 +64,12 @@ strong {
   font-weight: 300;
   margin: var(--small-spacing, 8px) 0 var(--large-spacing, 32px);
   text-align: center;
+}
+.introduction-sub-title::after {
+  animation: typedEffect .7s infinite;
+  content: '|';
+  display: inline-block;
+  margin: 0 var(--regular-spacing, 16px);
 }
 .introduction-text {
   color: var(--color-lightGray, #b3b3b3);
